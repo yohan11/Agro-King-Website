@@ -14,7 +14,9 @@ export default function Home() {
       }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
-            <Image src="/logo.jpeg" alt="Agro-King Logo" width={120} height={120} style={{ borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--white)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }} />
+            <div style={{ background: 'var(--primary)', padding: '2rem', borderRadius: '50%', boxShadow: '0 4px 20px rgba(16, 185, 129, 0.4)', color: 'white' }}>
+              <img src="/crown.svg" alt="Agro-King Crown" style={{ width: '80px', height: '80px' }} />
+            </div>
           </div>
           <h1 style={{ fontSize: '4rem', color: 'var(--primary-dark)', marginBottom: '1.5rem' }}>
             L'Élevage de Volailles, <br/>
