@@ -1,5 +1,5 @@
-import { FiBox, FiArrowRight } from 'react-icons/fi'
-
+import Image from 'next/image'
+import { FiArrowRight } from 'react-icons/fi'
 const COMMAND_URL = 'https://agroking-app.vercel.app';
 
 export const metadata = { title: 'Nos Produits - Agro-King' }
@@ -25,10 +25,12 @@ export default function Produits() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {products.map((p, i) => (
-              <div key={i} style={{ padding: '2.5rem', background: 'white', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', textAlign: 'center' }}>
-                <FiBox style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '1.5rem' }} />
+              <div key={i} style={{ padding: '1.5rem', background: 'white', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'relative', width: '100%', height: '200px', marginBottom: '1.5rem', borderRadius: '8px', overflow: 'hidden' }}>
+                  <Image src="/product.jpg" alt={p.title} fill style={{ objectFit: 'cover' }} />
+                </div>
                 <h3 className="mb-1">{p.title}</h3>
-                <p style={{ color: 'var(--text-light)', marginBottom: '2rem' }}>{p.desc}</p>
+                <p style={{ color: 'var(--text-light)', marginBottom: '2rem', flex: 1 }}>{p.desc}</p>
                 <a href={COMMAND_URL} className="btn btn-outline" target="_blank" rel="noopener noreferrer" style={{ width: '100%' }}>
                   Commander <FiArrowRight />
                 </a>

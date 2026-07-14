@@ -1,6 +1,6 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { FiArrowRight, FiCheckCircle } from 'react-icons/fi'
-
 const COMMAND_URL = 'https://agroking-app.vercel.app';
 
 export default function Home() {
@@ -13,6 +13,9 @@ export default function Home() {
         textAlign: 'center'
       }}>
         <div className="container">
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+            <Image src="/logo.jpeg" alt="Agro-King Logo" width={120} height={120} style={{ borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--white)', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }} />
+          </div>
           <h1 style={{ fontSize: '4rem', color: 'var(--primary-dark)', marginBottom: '1.5rem' }}>
             L'Élevage de Volailles, <br/>
             <span style={{ color: 'var(--primary)' }}>Simplifié et Rentable.</span>

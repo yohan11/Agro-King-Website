@@ -1,40 +1,18 @@
 import './globals.css'
+import Image from 'next/image'
 import Link from 'next/link'
-import { FiCommand, FiHome, FiBox, FiUsers, FiInfo, FiMail } from 'react-icons/fi'
-import { LuBird } from 'react-icons/lu'
+import Header from '@/components/Header'
 
 export const metadata = {
   title: 'Agro-King - Leader de l\'élevage avicole',
   description: 'Votre partenaire de confiance pour les poussins et l\'alimentation de volailles.',
 }
 
-const COMMAND_URL = 'https://agroking-app.vercel.app';
-
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body>
-        {/* Header / Navigation */}
-        <header className="header">
-          <div className="container header-container">
-            <Link href="/" className="logo">
-              <LuBird className="logo-icon" />
-              AGRO-KING
-            </Link>
-            
-            <nav className="nav-links">
-              <Link href="/" className="nav-link">Accueil</Link>
-              <Link href="/produits" className="nav-link">Produits</Link>
-              <Link href="/partenaires" className="nav-link">Partenaires</Link>
-              <Link href="/a-propos" className="nav-link">À propos</Link>
-              <Link href="/contact" className="nav-link">Nous contacter</Link>
-            </nav>
-
-            <a href={COMMAND_URL} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              Commander
-            </a>
-          </div>
-        </header>
+        <Header />
 
         {/* Main Content */}
         <main style={{ minHeight: '60vh' }}>
@@ -47,7 +25,7 @@ export default function RootLayout({ children }) {
             <div className="footer-grid">
               <div className="footer-col">
                 <div className="logo mb-2" style={{ color: 'white' }}>
-                  <LuBird className="logo-icon" style={{ color: 'var(--primary)' }} />
+                  <Image src="/logo.jpeg" alt="Agro-King Logo" width={40} height={40} style={{ borderRadius: '50%', objectFit: 'cover' }} />
                   AGRO-KING
                 </div>
                 <p>L'excellence dans l'élevage avicole et la nutrition animale au Cameroun.</p>
